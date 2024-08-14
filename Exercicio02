@@ -1,0 +1,129 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Hora {
+    private int horas;
+    private int minutos;
+    private int segundos;
+
+    public Hora() {
+        this.horas = 0;
+        this.minutos = 0;
+        this.segundos = 0;
+    }
+
+    public Hora(int horas, int minutos, int segundos) {
+        this.horas = horas;
+        this.minutos = minutos;
+        this.segundos = segundos;
+    }
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public void setHoras(int horas) {
+        this.horas = horas;
+    }
+
+    public int getMinutos() {
+        return minutos;
+    }
+
+    public void setMinutos(int minutos) {
+        this.minutos = minutos;
+    }
+
+    public int getSegundos() {
+        return segundos;
+    }
+
+    public void setSegundos(int segundos) {
+        this.segundos = segundos;
+    }
+
+    public String toString() {
+        return String.format("%02d:%02d:%02d", horas, minutos, segundos);
+    }
+}
+
+public class ConsultaAgendada {
+    private Data data;
+    private Hora hora;
+    private String nomePaciente;
+    private String nomeMedico;
+    private static int quantidade = 0;
+
+    public ConsultaAgendada() {
+        this.data = new Data();
+        this.hora = new Hora();
+        this.nomePaciente = "";
+        this.nomeMedico = "";
+        quantidade++;
+    }
+
+    public ConsultaAgendada(int h, int mi, int s, int d, int m, int a, String p, String m) {
+        this.data = new Data(d, m, a);
+        this.hora = new Hora(h, mi, s);
+        this.nomePaciente = p;
+        this.nomeMedico = m;
+        quantidade++;
+    }
+
+    public ConsultaAgendada(Data d, Hora h, String p, String m) {
+        this.data = d;
+        this.hora = h;
+        this.nomePaciente = p;
+        this.nomeMedico = m;
+        quantidade++;
+    }
+
+    public void setData(int d, int m, int a) {
+        this.data.setDia(d);
+        this.data.setMes(m);
+        this.data.setAno(a);
+    }
+
+    public void setData(Data d) {
+        this.data = d;
+    }
+
+    public void setHora(int h, int mi, int s) {
+        this.hora.setHoras(h);
+        this.hora.setMinutos(mi);
+        this.hora.setSegundos(s);
+    }
+
+    public void setHora(Hora h) {
+        this.hora = h;
+    }
+
+    public void setNomePaciente(String p) {
+        this.nomePaciente = p;
+    }
+
+    public void setNomeMedico(String m) {
+        this.nomeMedico = m;
+    }
+
+    public static int getAmostra() {
+        return quantidade;
+    }
+
+    public String getData() {
+        return data.toString();
+    }
+
+    public String getHora() {
+        return hora.toString();
+    }
+
+    public String getNomePaciente() {
+        return nomePaciente;
+    }
+
+    public String getNomeMedico() {
+        return nomeMedico;
+    }
+}
