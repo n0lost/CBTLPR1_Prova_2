@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class TestaConsultaAgendada {
+    public static void main(String[] args) {
+
+        ConsultaAgendada p1 = new ConsultaAgendada(14, 30, 0, 15, 8, 2024, "João Silva", "Dr. Almeida");
+        System.out.println("Propriedades de p1:");
+        System.out.println("Data: " + p1.getData());
+        System.out.println("Hora: " + p1.getHora());
+        System.out.println("Nome do Paciente: " + p1.getNomePaciente());
+        System.out.println("Nome do Médico: " + p1.getNomeMedico());
+        System.out.println("Quantidade de Consultas: " + ConsultaAgendada.getAmostra());
+        
+        ConsultaAgendada p2 = new ConsultaAgendada();
+        System.out.println("\nPropriedades de p2:");
+        System.out.println("Data: " + p2.getData());
+        System.out.println("Hora: " + p2.getHora());
+        System.out.println("Nome do Paciente: " + p2.getNomePaciente());
+        System.out.println("Nome do Médico: " + p2.getNomeMedico());
+        System.out.println("Quantidade de Consultas: " + ConsultaAgendada.getAmostra());
+
+        p1.setData(20, 12, 2024);
+        p1.setHora(9, 15, 0);
+        p1.setNomePaciente("Maria Souza");
+        p1.setNomeMedico("Dr. Costa");
+
+        System.out.println("\nPropriedades de p1 após alterações:");
+        System.out.println("Data: " + p1.getData());
+        System.out.println("Hora: " + p1.getHora());
+        System.out.println("Nome do Paciente: " + p1.getNomePaciente());
+        System.out.println("Nome do Médico: " + p1.getNomeMedico());
+        System.out.println("Quantidade de Consultas: " + ConsultaAgendada.getAmostra());
+    }
+}
